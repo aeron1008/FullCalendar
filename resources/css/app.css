@@ -1,0 +1,23 @@
+.dental-karton-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.zub-container {
+    margin: 5px;
+}
+
+/* Razmak između zubi 11 i 21 u prvom redu */
+#zub_11 + .zub-container {
+    margin-right: 30px;
+}
+
+/* Razmak između zubi 41 i 31 u drugom redu */
+#zub_41 + .zub-container {
+    margin-right: 30px;
+}

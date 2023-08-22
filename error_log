@@ -1,0 +1,2 @@
+[17-Apr-2023 17:14:19 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 2621440 bytes) in /home/stomatolozi/public_html/vendor/symfony/var-dumper/Caster/Caster.php on line 88
+[17-Apr-2023 17:14:19 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 2621440 bytes) in /home/stomatolozi/public_html/vendor/laravel/framework/src/Illuminate/View/Component.php on line 223
