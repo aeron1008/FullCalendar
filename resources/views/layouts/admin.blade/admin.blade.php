@@ -28,11 +28,38 @@
 
 <body class="sidebar-mini layout-fixed" style="height: auto;">
     <div class="wrapper">
-       
+        <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
+                </li>
+            </ul>
+
+            <!-- Right navbar links -->
+            @if (count(config('panel.available_languages', [])) > 1)
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" data-toggle="dropdown" href="#">
+                            {{ strtoupper(app()->getLocale()) }}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            @foreach (config('panel.available_languages') as $langLocale => $langName)
+                                <a class="dropdown-item"
+                                    href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ strtoupper($langLocale) }}
+                                    ({{ $langName }})</a>
+                            @endforeach
+                        </div>
+                    </li>
+                </ul>
+            @endif
+
+        </nav>
+
         @include('partials.menu')
-        <div class="content-wrapper" style="margin-left: 50px;">
+        <div class="content-wrapper" style="min-height: 917px;">
             <!-- Main content -->
-            <section class="content">
+            <section class="content" style="padding-top: 20px">
                 @if (session('message'))
                     <div class="row mb-2">
                         <div class="col-lg-12">
@@ -54,7 +81,7 @@
             <!-- /.content -->
         </div>
 
-        {{-- <footer class="main-footer">
+        <footer class="main-footer">
             <div class="float-right d-none d-sm-block">
                 <!-- <b>Version</b> 3.0.0-alpha -->
             </div>
@@ -62,7 +89,7 @@
         </footer>
         <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
-        </form> --}}
+        </form>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>

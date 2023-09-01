@@ -10,8 +10,7 @@
                 body {
                     margin: 0;
                     padding: 0;
-                    /*width: 100vw;*/
-                    height: 100%;
+                    width: 100vw;
                 }
 
                 * {
@@ -20,16 +19,11 @@
 
                 [class*="col-"] {
                     float: left;
-                    padding: 20px;
+                    padding: 25px;
                 }
 
                 p {
                     margin-bottom: 0em;
-                    font-family: sans-serif;
-                }
-
-                span {
-                    font-family: sans-serif;
                 }
 
                 .addPanel [class*="col-"] {
@@ -45,10 +39,6 @@
 
                 [class*="col-"] {
                     width: 100%;
-                }
-
-                .left-sidebar {      
-                    font-size: 0.7em;
                 }
 
                 .calendar-type {
@@ -71,7 +61,7 @@
                 }
 
                 #prev {
-                    margin-right: 10px;
+                    margin-right: 20px;
                     color: #0d6efd;
                 }
 
@@ -85,8 +75,8 @@
 
                 #addTerminus {
                     position: absolute;
-                    top: 80%;
-                    right: 5%;
+                    top: 75%;
+                    right: 10%;
                     width: 50px;
                     height: 50px;
                     z-index: 1;
@@ -104,7 +94,7 @@
                 }
 
                 #doctor_checked4 {
-                    accent-color: #04a90f;
+                    accent-color: #09a714;
                 }
 
                 .btn-circle {
@@ -113,10 +103,6 @@
 
                 .fc-day-header {
                     text-transform: uppercase;
-                }
-
-                .fc-month-header {
-                    font-size: 1.5em;
                 }
 
                 .fc-head {
@@ -151,34 +137,32 @@
                 }
 
                 .fc-event-container a {
-                    background-color: rgb(220, 240, 249);
-                    border-left: 4px solid rgb(113, 164, 243);
+                    background-color: rgb(208, 230, 248);
+                    border-left: 4px solid rgb(34, 164, 215);
                     padding: 3px;
                     border-right: 0px;
                     border-bottom: 0px;
                 }
 
                 .fc-event-container .fc-content {
+                    background-color: rgb(208, 230, 248);
                     color: rgb(11, 108, 147);
-                }
-
-                .fc-event-container .fc-content .fc-title {
                     font-weight: bold;
                 }
 
-
                 .fc-event-container .colored-event {
-                    background-color: rgb(240, 249, 240);
-                    border-left: 4px solid rgb(43 183 171);
+                    background-color: rgb(208, 248, 212);
+                    border-left: 4px solid rgb(5, 139, 34);
                 }
 
                 .fc-event-container .colored-event .fc-content {
+                    background-color: rgb(208, 248, 212);
                     color: rgb(5, 139, 34);
                     font-weight: bold;
                 }
 
                 .fc-event-container .month_event {
-                    margin: 0 15px 7.5px;
+                    margin: 0 7.5px 7.5px;
                 }
 
                 .current-day {
@@ -195,8 +179,7 @@
                 }
 
                 .half_hour {
-                    font-size: 0.9em;
-                    margin: 2px 0px;
+                    font-size: 0.97em;
                 }
 
                 .fc-ltr .fc-axis {
@@ -210,15 +193,7 @@
                 .fc-time-grid-event .fc-title {
                     white-space: normal;
                 }
-                /* weekends */
-                td.fc-sat, td.fc-sun {
-                    background-color: #f2f2f2da; /* Set your desired background color here */
-                }
-                /* fit screen */
-                .fc-view-container .fc-widget-content .fc-scroller {
-                    height: 90vh !important;
-                    overflow: auto;
-                } 
+
 
                 /* MiniCalendar */
                 .wrapperi {
@@ -236,12 +211,13 @@
                 }
 
                 #calendari {
-                    margin: 15px 0;
+                    margin: 20px 0;
                     position: relative;
                     overflow: hidden;
                     width: 100%;
-                    height: 200px;
-                    /* font-size: 11px; */
+                    height: 350px;
+                    ;
+                    font-size: 14px;
                 }
 
                 .wrapperi table {
@@ -281,14 +257,14 @@
 
                 .wrapperi tr:first-child th {
                     display: none;
-                    font-size: 10px;
+                    font-size: 20px;
                     font-weight: bold;
                     border-left: none;
                     border-top: none;
                 }
 
                 .wrapperi tr:nth-child(2) th {
-                    padding: 5px 0px;
+                    padding: 5px;
                 }
 
                 .wrapperi d {
@@ -298,7 +274,7 @@
 
                 .wrapperi td>span {
                     color: #555;
-                    padding: 2.5px 0px;
+                    padding: 10px;
                     display: block;
                     border: 2px solid transparent;
                     transition: border 0.3s ease;
@@ -347,26 +323,31 @@
                     z-index: 0;
                 }
 
-                /* .fit_screen {
-                    height: 90vh;
-                    overflow: auto;
-                } */
+                .tooltipevent {
+                    position: absolute;
+                    width: 150px;
+                    padding: 10px;
+                    background-color: #000;
+                    color: #fff;
+                    border-radius: 5px;
+                    font-size: 14px;
+                }
             </style>
 
             <div class="row" style="height: 100vh;">
-                <div class="col-md-2 col-sm-12 left-sidebar">
-                    <div class="btn-group btn-group-sm m-auto calendar-type">
-                        <button type="button" id="dayView" class="btn btn-outline-primary" style="font-size: 1.0em;">Dan</button>
-                        <button type="button" id="weekView" class="btn btn-outline-primary" style="font-size: 1.0em;">Tjedno</button>
-                        <button type="button" id="monthView" class="btn btn-outline-primary" style="font-size: 1.0em;">Mjesečno</button>
+                <div class="col-md-3 col-sm-12">
+                    <div class="btn-group m-auto calendar-type">
+                        <button type="button" id="dayView" class="btn btn-outline-primary">Dnevni</button>
+                        <button type="button" id="weekView" class="btn btn-outline-primary">Tjedni</button>
+                        <button type="button" id="monthView" class="btn btn-outline-primary">Mjesečni</button>
                     </div>
 
                     <div class="row m-auto calendar-btn">
-                        <div class="col-sm-8" style="padding: 25px 0px;">
-                            <h5 id="calendarTitle" style="font-size: 1.5em;"></h5>
+                        <div class="col-sm-8 col-8">
+                            <h5 id="calendarTitle"></h5>
                         </div>
-                        <div class="col-sm-4" style="padding: 20px 0px;">
-                            <div class="btn-group btn-group-sm d-flex justify-content-end">
+                        <div class="col-sm-4 col-4">
+                            <div class="btn-group d-flex justify-content-end">
                                 <button type="button" id="prev" class="btn btn-light"><i
                                         class="fa fa-chevron-left"></i></button>
                                 <button type="button" id="next" class="btn btn-light"><i
@@ -376,7 +357,7 @@
                     </div>
 
                     <div class="row m-auto">
-                        <button type="button" id="to_today" class="btn btn-primary" style="font-size: 1.2em;">Idi na danas</button>
+                        <button type="button" id="to_today" class="btn btn-primary">Idi na danas</button>
                     </div>
 
                     <div class="row m-auto" id='minicalendar'>
@@ -389,41 +370,41 @@
                     <div class="row m-auto">
                         <div class="col">
                             <input type="text" id="sch_patient" class="form-control text-center"
-                                placeholder="&#xf007; Pretraži pacijenta" style="font-family: 'Font Awesome 5 Free'; font-size: 1.2em; font-family: sans-serif;">
+                                placeholder="&#xf007; Pretraži pacijenta" style="font-family: 'Font Awesome 5 Free';">
                         </div>
                     </div>
 
                     <div class="doctor_panel">
-                        <label class="doctor_label" for="checklist" style="font-size: 1.5em;">Doktori</label>
-                        <div id="checklist" style="font-size: 1.5em;">
+                        <label class="doctor_label" for="checklist">Doktori</label>
+                        <div id="checklist">
                             @foreach ($doctors as $id => $doctor)
                                 <div class="form-check ml-3">
                                     <input class="form-check-input" type="checkbox" id="doctor_checked{{ $id }}"
                                         name="" value="" checked>
-                                    <label class="form-check-label" style="color: #888787; font-weight: normal;">{{ $doctor }}</label>
+                                    <label class="form-check-label">{{ $doctor }}</label>
                                 </div>
                             @endforeach
                         </div>
                     </div>
                 </div>
 
-                <div id="div1" class="col-md-10 col-sm-12 card-body" style="height: 100vh; padding: 0px 50px">
-                    <div id='calendar' class="m-auto" style="height: 100vh; overflow: hidden;">
+                <div id="div1" class="col-md-9 col-sm-12" style="height: 95vh;">
+                    <div id='calendar' class="m-auto" style="width: 90%;">
                         <button type="button" id="addTerminus" class="btn btn-lg btn-circle btn-primary"><i
                                 class="fa fa-plus"></i></button>
                     </div>
                 </div>
 
 
-                <div id="div2" class="col-0" style="display: none; height: 90vh; padding: 0px 15px 0px 0px; font-size: 0.8em;">
+                <div id="div2" class="col-0" style="display: none; height: 90vh; padding-right: 70px;">
                     <ul class="nav nav-tabs">
                         <li class="nav-item">
                             <a class="nav-link active">Upisi pacijenta</a>
                         </li>
                     </ul>
                     <div class="mt-1">
-                        <h5 id="eventDate" style="display: inline; font-size:1.5em;"></h5>
-                        <form class="input-group " style="display: inline">
+                        <h4 id="eventDate" style="display: inline"></h4>
+                        <form class="input-group" style="display: inline">
                             <input class="date" type="text" name="eventDate_virtual" id="eventDate_virtual" />
                             <label for="date_picker" class="btn" id="eventDate_handler">
                                 <i class="fa fa-chevron-down"></i>
@@ -431,10 +412,10 @@
                         </form>
                     </div>
 
-                    <div class="row btn-group btn-group-sm mb-2" style="float: left;">
+                    <div class="row btn-group mb-2" style="float: left;">
                         <span class="btn btn-light btn-sm btn-circle mr-2" id="minus_btn1"><i
                                 class="fa fa-minus"></i></span>
-                        <h5 style="font-size: 1.2em; margin-top: 5px;"><span id="start_time_display"></span> - <span id="finish_time_display"></span></h5>
+                        <h5><span id="start_time_display"></span> - <span id="finish_time_display"></span></h5>
                         <span class="btn btn-light btn-sm btn-circle ml-2" id="plus_btn1"><i class="fa fa-plus"></i></span>
                     </div>
 
@@ -456,7 +437,7 @@
                             @endif
                             <span class="help-block">{{ trans('cruds.terminu.fields.pacjent_helper') }}</span>
                         </div>
-                        <div class="container mb-1 addPanel">
+                        <div class="container mb-2 addPanel">
                             <div class="row">
                                 <div class="col-5">
                                     <label for="pocinje">Počinje</label>
@@ -531,16 +512,16 @@
                                 </div>
                                 <div class="col-8">
                                     <div class="button-group">
-                                        <button class="btn btn-sm btn-outline-primary ml-2" style="float: right; font-size: 1.0em;"
+                                        <button class="btn btn-sm btn-outline-primary ml-2" style="float: right;"
                                             id="submit_btn1">Potvrdi</button>
                                         <button class="btn btn-sm btn-outline-secondary"
-                                            style="float: right; font-size: 1.0em;">Odustani</button>
+                                            style="float: right;">Odustani</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mb-1">
+                        <div class="mb-2">
                             <label for="checkroom">Slanje obavijesti</label>
                             <div class="row" id="checkroom">
                                 <div class="form-check ml-3">
@@ -556,9 +537,9 @@
                             </div>
                         </div>
 
-                        <div class="mb-1">
+                        <div class="mb-2">
                             <label for="komentar">Napomena:</label>
-                            <textarea class="form-control mb-2 {{ $errors->has('komentar') ? 'is-invalid' : '' }}" rows="2" id="komentar" style="font-size: 1.0em;"
+                            <textarea class="form-control mb-2 {{ $errors->has('komentar') ? 'is-invalid' : '' }}" rows="3" id="komentar"
                                 name="komentar" placeholder="Dodaj napomenu"></textarea>
                             @if ($errors->has('komentar'))
                                 <span class="text-danger">{{ $errors->first('komentar') }}</span>
@@ -570,10 +551,10 @@
                             </div>
                             <div class="col-10">
                                 <div class="button-group">
-                                    <button type="submit" class="btn btn-sm btn-outline-primary mr-2" id="submit_btn2"
-                                        style="float:right; font-size: 1.0em;">Spremi</button>
-                                    <button type="button" class="btn btn-sm btn-secondary mr-3" id="clcTerminus"
-                                        style="float:right; font-size: 1.0em;">Zatvari</button>
+                                    <button type="submit" class="btn btn-outline-primary mr-2" id="submit_btn2"
+                                        style="float:right;">Spremi</button>
+                                    <button type="button" class="btn btn-secondary mr-3" id="clcTerminus"
+                                        style="float:right;">Zatvari</button>
                                 </div>
                             </div>
                         </div>
@@ -599,7 +580,6 @@
         var dies = ['nedjelja', 'ponedjeljak', 'utorak', 'srijeda', 'četvrtak', 'petak', 'subota'];
 
         var dies_abr = ['NED', 'PON', 'UTO', 'SRI', 'ČET', 'PET', 'SUB'];
-        var dies_mini = ['Ned', 'Pon', 'Uto', 'Sri', 'Čet', 'Pet', 'Sub'];
 
         var widgetCalendar = document.getElementById('calendari');
 
@@ -629,43 +609,24 @@
         if (month < 10) {
             month = "0" + month;
         }
-        // Current weekday
-        var currentDay = today.getDay();
-        if (currentDay === 0) {
-            currentDay = 7;
-        }
-        document.getElementById("eventDate").innerHTML = dies_mini[currentDay] + ", " + day + "." + month + "." + year + ".";
-
-        function addAxisElementClass() {
-            const axisElements = document.querySelectorAll('tbody tr');
-            axisElements.forEach((axis, index) => {
-                if (index % 4 === 2) {
-                    axis.firstElementChild.classList.add('full_hour');
-                }
-                if (index % 4 === 0) {
-                    axis.firstElementChild.classList.add('half_hour');
-                }
-            });
-        }        
+        document.getElementById("eventDate").innerHTML = weekday + ", " + day + "." + month + "." + year + ".";
 
         // FullCalendar
         $(document).ready(function() {
             // page is now ready, initialize the calendar...
             calendari(document.getElementById('calendari'), dateCalendar);
-           
+            
             var events = {!! json_encode($events) !!};
-            // console.log(events);
+            console.log(events);
             var doctors = {!! json_encode($doctors) !!};
 
             var calendar = $('#calendar').fullCalendar({
                 events: events,
                 defaultView: 'month',
                 locale: 'hr',
-                height: '90vh',
                 slotDuration: '00:15',
                 slotLabelFormat: 'HH:mm',
                 header: false,
-                weekends: true,
                 timeFormat: 'H:mm', // 24-hour format
                 allDaySlot: false, // remove all-day slot
                 minTime: '08:00:00', // set calendar start time to 8:00
@@ -680,7 +641,7 @@
                         element.addClass('colored-event');
                     }
                     element.find('.fc-time').html(eventStart + ' - ' + eventEnd + '<br>');
-                },                
+                },
             });
 
             var filteredEvents = [];
@@ -784,11 +745,22 @@
                 });
             }
 
+            function addAxisElementClass() {
+                const axisElements = document.querySelectorAll('tbody tr');
+                axisElements.forEach((axis, index) => {
+                    if (index % 4 === 2) {
+                        axis.firstElementChild.classList.add('full_hour');
+                    }
+                    if (index % 4 === 0) {
+                        axis.firstElementChild.classList.add('half_hour');
+                    }
+                });
+            }
+
             addCurrentDayClass();
 
             function updateButtonState() {
                 var view = calendar.fullCalendar('getView');
-
                 $('.btn-outline-primary').removeClass('active');
                 if (view.name === 'agendaDay') {
                     $('#dayView').addClass('active');
@@ -801,11 +773,24 @@
                 } else if (view.name === 'month') {
                     $('#monthView').addClass('active');
                     $('.fc-day-grid-event').addClass('month_event');
-                    $('.fc-day-header').addClass('fc-month-header');
-                    // $('.fc-day-grid-container').addClass('fit_screen');
+                    // For scroll and overflow
+                    var element = $('.fc-scroller.fc-day-grid-container');
+                    element.css({
+                        'overflow': 'auto',
+                        'height': '100vh'
+                    });                    
+                    // Get the fc-scroller element
+                    var fcScroller = document.querySelector('.fc-scroller.fc-day-grid-container');
+
+                    // Check if the element exists
+                    if (fcScroller) {
+                    // Apply the desired styles
+                    fcScroller.style.overflow = 'auto';
+                    fcScroller.style.height = '95vh'; // Set the height to fit the screen vertically
+}
                     const thElements = document.querySelectorAll('thead th');
                     thElements.forEach((th, index) => {
-                        th.innerHTML = th.innerHTML.replace('.', '');                        
+                        th.innerHTML = th.innerHTML.replace('.', '');
                         var title_content = view.title.split(' ');
                         var month_part = title_content[0];
                         var month_index = mesos.indexOf(month_part);
@@ -821,19 +806,15 @@
                             th.classList.add('prev-day');
                         }
                     });
-                    const tdElements = document.querySelectorAll('tr td span');
-                    tdElements.forEach((span, index) => {
-                        var dayNumber = span.innerHTML.padStart(2, '0');
-                        span.innerHTML = dayNumber;
-                    });
+
                 }
             }
 
             // Add click event for addTerminus button
             $("#addTerminus").click(function() {
                 // window.location.href = "{{ route('admin.terminus.create') }}";
-                $("#div1").removeClass("col-md-10 col-sm-12").addClass("col-md-7 col-sm-12");
-                $("#div2").addClass("col-md-3 col-sm-12")
+                $("#div1").removeClass("col-md-9 col-sm-12").addClass("col-md-5 col-sm-12");
+                $("#div2").addClass("col-md-4 col-sm-12")
                     .show();
                 // Assuming div2 has display: none initially
                 document.getElementById("addTerminus").style.display = "none";
@@ -842,14 +823,12 @@
             });
 
             $("#clcTerminus").click(function() {
-                $("#div1").removeClass("col-md-6 col-sm-12").addClass("col-md-10 col-sm-12");
+                $("#div1").removeClass("col-md-5 col-sm-12").addClass("col-md-9 col-sm-12");
                 $("#div2").removeClass("col-md-4 col-sm-12").hide();
                 // Hide the div again
                 document.getElementById("addTerminus").style.display = "block";
                 document.getElementById("div2").style.display = "none";
             });
-
-
         });
 
         function addCurrentDateClass(view) {
@@ -863,7 +842,7 @@
                     var monthyear_part = title_content[1];
                     var month_part = monthyear_part.split(' ')[1];
                     var month_index = mesos.indexOf(month_part);
-                    th.innerHTML = '<p style="font-size: 0.6em; margin-top:0.6em;">' +
+                    th.innerHTML = '<p style="font-size: 0.5em; margin-top:0.5em;">' +
                         dies_abr[week_index] + '</p>' + '<p style="font-size: 1.2em;">' +
                         date_part +
                         '</p>';
@@ -968,10 +947,10 @@
             fila = document.createElement('tr');
 
             for (var i = 1; i < 7; i++) {
-                fila.innerHTML += '<th>' + dies_mini[i] + '</th>';
+                fila.innerHTML += '<th>' + dies_abr[i] + '</th>';
             }
 
-            fila.innerHTML += '<th>' + dies_mini[0] + '</th>';
+            fila.innerHTML += '<th>' + dies_abr[0] + '</th>';
             e.appendChild(fila);
 
             /* Obtinc el dia que va acabar el mes anterior */
@@ -995,11 +974,9 @@
                     if (actual.getMonth() !== data.getMonth())
                         cela.className = 'fora';
                     /* Si es avui el decorem */
-                    if (today.getDate() == actual.getDate() &&
+                    if (data.getDate() == actual.getDate() &&
                         data.getMonth() == today.getMonth()) {
-                            if (cela.className !== 'fora') {                                
-                                cela.className = 'avui';
-                            }
+                        cela.className = 'avui';
                     }
                     actual.setDate(actual.getDate() + 1);
 
@@ -1027,7 +1004,6 @@
                         } else if (view.name === 'agendaWeek') {
                             addCurrentWeekClass();
                         }
-                        addAxisElementClass();
                     });
 
                     fila.appendChild(cela);

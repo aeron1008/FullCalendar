@@ -57,14 +57,15 @@ class SystemCalendarController extends Controller
     
         $pacjents = Pacjenti::where('user_id', $user->id)
         ->pluck('name', 'id')
-        ->prepend(trans('global.pleaseSelect'), '');
+        ->prepend('Odaberi pacijenta', '');
     
         $zaposleniks = Zaposlenici::where('user_id', $user->id)
         ->pluck('name', 'id')
-        ->prepend(trans('global.pleaseSelect'), '');
+        ->prepend('Izaberi uslugu...', '');
 
         $doctors = Zaposlenici::where('user_id', $user->id)
         ->pluck('name', 'id');
+        // ->prepend('Izaberi uslugu...', '');
         // dd($doctors);
     
         return view('admin.calendar.calendar', compact('events', 'pacjents', 'zaposleniks', 'doctors'));

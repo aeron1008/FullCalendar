@@ -14,7 +14,7 @@
     <link
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css"
         rel="stylesheet" />
-    <link href="{{ asset('css/adminltev3.css') }}" rel="stylesheet" />
+    {{-- <link href="{{ asset('css/adminltev3.css') }}" rel="stylesheet" /> --}}
     <link href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
@@ -26,11 +26,11 @@
     @yield('styles')
 </head>
 
-<body class="sidebar-mini layout-fixed" style="height: auto;">
-    <div class="wrapper">
-       
+<body class="layout-fixed" style="height: auto;">
+    <div class="wrapper" style="height: auto;">
+        
         @include('partials.menu')
-        <div class="content-wrapper" style="margin-left: 50px;">
+        <div class="content-wrapper" style="margin-left: 75px;">
             <!-- Main content -->
             <section class="content">
                 @if (session('message'))
@@ -54,13 +54,14 @@
             <!-- /.content -->
         </div>
 
-        {{-- <footer class="main-footer">
+
+        {{-- <footer class="main-footer" style="margin-left: 75px;">
             <div class="float-right d-none d-sm-block">
                 <!-- <b>Version</b> 3.0.0-alpha -->
             </div>
             <strong> &copy;</strong> Sva prava pridržana - stomatolozi.online
-        </footer>
-        <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
+        </footer> --}}
+        {{-- <form id="logoutform" action="{{ route('logout') }}" method="POST" style="display: none;">
             {{ csrf_field() }}
         </form> --}}
     </div>
@@ -88,7 +89,7 @@
     </script>
     <script src="{{ asset('js/datetimepicker/locales/ru.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
+    {{-- <script src="{{ asset('js/main.js') }}"></script> --}}
     {{-- <script src="{{ asset('js/app.js') }}" defer type="module"></script> --}}
 
     <script>
